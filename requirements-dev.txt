@@ -1,0 +1,13 @@
+# Tooling lock for Python 3.12; direct tools: ruff and pre-commit
+cfgv==3.5.0
+distlib==0.4.4
+filelock==4.2.4
+identify==2.6.20
+nodeenv==1.11.0
+packaging==26.3
+platformdirs==4.13.5
+pre_commit==4.7.0
+python-discovery==1.6.4
+PyYAML==6.0.3
+ruff==0.16.8
+virtualenv==21.14.13
