@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Новость",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "text", "url", "source", "published_at", "language"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "text": { "type": "string", "pattern": "\\S" },
+    "url": { "type": ["string", "null"], "format": "uri" },
+    "source": { "type": "string", "minLength": 1 },
+    "published_at": { "type": ["string", "null"], "format": "date-time" },
+    "language": { "type": ["string", "null"], "minLength": 2 },
+    "metadata": { "type": "object" }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "raw-dataset-manifest-v1",
+  "dataset_id": "trade_news_full",
+  "source_system": null,
+  "origin": "user-provided export of trade news texts collected from websites",
+  "document_schema": "schemas/news_document.schema.json",
+  "normalization_status": "normalized",
+  "files": [
+    {
+      "path": "data/raw/trade_news/relevant_trade_news_202606112005.xlsx",
+      "sha256": "77eef81422bf9fea499482531c120527267137012e7b79c7ce5e321a38a42818",
+      "bytes": 157845319,
+      "format": "xlsx",
+      "sheet": "Sheet0",
+      "data_rows": 103190,
+      "columns": 16,
+      "source_date_field": "dates",
+      "source_date_min": "2020-02-16",
+      "source_date_max": "2026-06-11",
+      "source_date_semantics": "unknown"
+    }
+  ],
+  "cleaning": {
+    "version": "hard-errors-v1",
+    "cleaned_at": "2026-11-08T19:40:30.894695+00:00",
+    "removed_data_rows": 9172,
+    "input_data_rows": 112362,
+    "output_data_rows": 103190,
+    "removed_by_first_reason": {
+      "empty_text": 748,
+      "exact_duplicate_row": 5003,
+      "ambiguous_id_text": 3358,
+      "possible_excel_truncation": 63
+    },
+    "ambiguous_ids": 983,
+    "ambiguous_urls": 823,
+    "content_sha256": "58cc62e3b26dc32daa45a7b33ae1a0efb25216275d77ac80ca5348cdc0cab58b",
+    "input_sha256": "2c29b69445de1599708b841fdc74d4c315a9d863c2b6a05fed57addd2fe40b3a",
+    "output_sha256": "77eef81422bf9fea499482531c120527267137012e7b79c7ce5e321a38a42818"
+  },
+  "normalized": {
+    "version": "trade-news-import-v1",
+    "imported_at": "2026-11-08T20:16:40.806842+00:00",
+    "path": "data/processed/trade_news/news.jsonl",
+    "format": "jsonl",
+    "encoding": "utf-8",
+    "documents": 101963,
+    "source_rows": 103190,
+    "merged_rows": 1227,
+    "merged_url_groups": 793,
+    "language_conflict_groups": 0,
+    "uri_encoded_source_rows": 632,
+    "languages": {
+      "ru": 61103,
+      "en": 39285,
+      "pt": 1300,
+      "fr": 268,
+      "unknown": 7
+    },
+    "input_sha256": "77eef81422bf9fea499482531c120527267137012e7b79c7ce5e321a38a42818",
+    "sha256": "d2dbe2931c89b4deb504afcce119b5cf09579009be0f3bba473213c87b098aa1",
+    "bytes": 549620236,
+    "schema_sha256": "68694036175126b4d0075a1bdb65a07488295bc25968a458ae6ec9ec0a62c94d",
+    "importer_sha256": "fc884f445efa8806d8d9267c0f52ee2cce56826a248d7469d04890c2f78f0a46",
+    "reader_sha256": "d8e2b9386c582690732268f31bbd568ef4b7398ff1bcfce5f685f54cf82253bd",
+    "import_log": "logs/imports/trade_news_full.jsonl",
+    "import_log_sha256": "e2e797ba9339da0cd2775a83dd57c26d7c264675e6c4761af54abfb58c4a7be9"
+  }
+}
