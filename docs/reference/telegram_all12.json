@@ -1,0 +1,71 @@
+{
+  "schema_version": "raw-dataset-manifest-v1",
+  "dataset_id": "telegram_all12_last12months_20251109",
+  "document_schema": "schemas/news_document.schema.json",
+  "normalization_status": "normalized",
+  "files": [
+    {
+      "path": "data/raw/telegram/all12_last12months_20251109.jsonl",
+      "format": "jsonl",
+      "encoding": "utf-8",
+      "sha256": "efe82f95a12deb55bd7d5c441c74384689c3f1e3c05b4c94ed6b8129a86470d4",
+      "bytes": 194313597,
+      "data_rows": 89832
+    }
+  ],
+  "cleaning": {
+    "rule": "exclude_single_username_only",
+    "removed_data_rows": 4,
+    "removed_records": [
+      {
+        "source_row": 66298,
+        "id": "tg:1036240821:147277",
+        "text": "@meduzalive"
+      },
+      {
+        "source_row": 70036,
+        "id": "tg:1036240821:143132",
+        "text": "@meduzalive"
+      },
+      {
+        "source_row": 73970,
+        "id": "tg:1036240821:138878",
+        "text": "@meduzalive"
+      },
+      {
+        "source_row": 77914,
+        "id": "tg:1036240821:134616",
+        "text": "@meduzalive"
+      }
+    ]
+  },
+  "normalized": {
+    "version": "telegram-import-v1",
+    "imported_at": "2026-11-08T22:02:15.644715+00:00",
+    "path": "data/processed/telegram/news.jsonl",
+    "format": "jsonl",
+    "encoding": "utf-8",
+    "documents": 89828,
+    "source_rows": 89832,
+    "channels": {
+      "tg:1133408457": 7302,
+      "tg:1498653424": 4436,
+      "tg:1149896996": 15525,
+      "tg:1140809683": 4110,
+      "tg:1199979298": 1103,
+      "tg:2416194304": 3845,
+      "tg:1003268324": 1665,
+      "tg:1136626166": 18329,
+      "tg:1254661214": 7241,
+      "tg:1036240821": 14740,
+      "tg:1581158348": 248,
+      "tg:1052226869": 11284
+    },
+    "input_sha256": "efe82f95a12deb55bd7d5c441c74384689c3f1e3c05b4c94ed6b8129a86470d4",
+    "sha256": "acb231086f171c9ff233442cc0b052386b53043e909f4ad82032d220d0207d05",
+    "bytes": 194310809,
+    "schema_sha256": "68694036175126b4d0075a1bdb65a07488295bc25968a458ae6ec9ec0a62c94d",
+    "importer_sha256": "aa473672e8ea62a62b00e2c2b05ac640c30bf3ea4b17e4bd8b1870890dd7c13d",
+    "retained_records": "byte-for-byte unchanged, in source order"
+  }
+}
