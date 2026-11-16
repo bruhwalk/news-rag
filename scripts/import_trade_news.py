@@ -181,7 +181,11 @@ def run(args):
     if input_hash != entry["sha256"]:
         raise ValueError("XLSX не совпадает с манифестом")
     validate = validator()
-    observed_at = datetime.now(UTC).isoformat()
+    previous = manifest.get("normalized", {})
+    observed_at = (
+        previous.get("imported_at") if previous.get("input_sha256") == input_hash else None
+    )
+    observed_at = observed_at or datetime.now(UTC).isoformat()
     groups, input_rows = collect_metadata(rows(source))
     if input_rows != entry["data_rows"]:
         raise ValueError("Число строк XLSX отличается от манифеста")

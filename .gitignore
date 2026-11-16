@@ -15,4 +15,6 @@ data/
 artifacts/
 logs/
 *.log
+*.session
+*.session-*
 /tmp/

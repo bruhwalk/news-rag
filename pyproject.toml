@@ -1,3 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "news-rag"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi==0.162.7",
+    "httpx==0.28.1",
+    "pydantic==2.14.3",
+    "python-dotenv==1.2.4",
+    "truststore==0.10.1",
+    "uvicorn==0.54.0",
+]
+
+[project.optional-dependencies]
+semantic = ["numpy==2.3.5", "sentence-transformers==6.2.0"]
+
+[project.scripts]
+news-rag-index = "news_rag.cli:index_main"
+news-rag-ask = "news_rag.cli:ask_main"
+
+[tool.setuptools.package-data]
+news_rag = ["prompts/*.md"]
+
 [tool.ruff]
 target-version = "py312"
 line-length = 100
